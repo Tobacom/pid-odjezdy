@@ -1,7 +1,7 @@
-using System.IO;
 using System.Text.Json;
+using Godot;
 
-static class ConfigWorker
+partial class ConfigWorker : Node
 {
     public static JsonSerializerOptions JsonOptions = new()
     {
@@ -11,13 +11,9 @@ static class ConfigWorker
 #nullable enable
     public static ConfigData? GetConfig()
     {
-        string configfile;
+        string configfile = FileAccess.GetFileAsString("res://config.json");
 
-        try
-        {
-            configfile = File.ReadAllText("config.json");
-        }
-        catch (FileNotFoundException)
+        if (configfile == string.Empty)
         {
             throw new System.Exception("config.json not found!");
         }

@@ -333,10 +333,12 @@ anchor_right = 0.875
 anchor_bottom = 0.945
 offset_top = 2.28882e-05
 offset_right = -0.125061
-offset_bottom = 0.125
+offset_bottom = 0.125031
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ipnkv")
+allow_reselect = true
+max_text_lines = 2
 script = ExtResource("6_8ded3")
 targetLE = NodePath("../InputFrom")
 
