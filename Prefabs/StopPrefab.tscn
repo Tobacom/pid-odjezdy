@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://i8d7avk550ws"]
+
+[ext_resource type="Theme" uid="uid://ceoj7tajm4sap" path="res://Themes/theme_details.tres" id="1_g2o4j"]
+[ext_resource type="FontFile" uid="uid://dqrr27o2kwu40" path="res://Fonts/FiraSans-Light.ttf" id="2_jqbkx"]
+
+[node name="StopPrefab" type="Control"]
+custom_minimum_size = Vector2(350, 35)
+layout_mode = 3
+anchor_right = 0.933
+anchor_bottom = 0.05
+offset_right = 0.125
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.194
+anchor_bottom = 1.0
+offset_right = 0.0999985
+theme = ExtResource("1_g2o4j")
+theme_override_fonts/font = ExtResource("2_jqbkx")
+theme_override_font_sizes/font_size = 25
+text = "23:59"
+vertical_alignment = 1
+
+[node name="StopName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.194
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0999985
+theme = ExtResource("1_g2o4j")
+theme_override_font_sizes/font_size = 27
+text = "Zastávka"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3

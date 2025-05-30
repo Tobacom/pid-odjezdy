@@ -1,0 +1,130 @@
+[gd_scene load_steps=13 format=3 uid="uid://ewu4cq23e24e"]
+
+[ext_resource type="FontFile" uid="uid://dtq2d54gnr05j" path="res://Fonts/FiraSans-Medium.ttf" id="1_qp8sx"]
+[ext_resource type="Script" uid="uid://yadg024mxgi4" path="res://Scripts/FavouriteItem.cs" id="1_rpuqr"]
+[ext_resource type="FontFile" uid="uid://dqrr27o2kwu40" path="res://Fonts/FiraSans-Light.ttf" id="2_rpuqr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3l2j1"]
+bg_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_adl7q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62i3k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqdkl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4swcc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72jma"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_luqxe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1kqh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_61j6o"]
+
+[node name="FavouritePrefab" type="Control"]
+custom_minimum_size = Vector2(350, 75)
+layout_mode = 3
+anchor_right = 0.933
+anchor_bottom = 0.107
+offset_right = 0.125
+offset_bottom = 0.0999908
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rpuqr")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3l2j1")
+
+[node name="StopName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.133
+anchor_right = 0.814
+anchor_bottom = 0.533
+offset_left = -0.150001
+offset_top = 0.0249996
+offset_right = 0.100006
+offset_bottom = 0.0249977
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qp8sx")
+theme_override_font_sizes/font_size = 24
+text = "ZASTÁVKA"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.5
+anchor_right = 0.814
+anchor_bottom = 0.906
+offset_left = -0.150001
+offset_top = 0.435001
+offset_right = 0.100006
+offset_bottom = -0.0149994
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_rpuqr")
+theme_override_font_sizes/font_size = 16
+text = "ČAS ODJEZDU"
+vertical_alignment = 1
+
+[node name="Star" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.857
+anchor_top = 0.04
+anchor_right = 0.986
+anchor_bottom = 0.96
+offset_left = 0.0499878
+offset_right = -0.100037
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "★"
+
+[node name="BtnNormal" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.857
+anchor_bottom = 1.0
+offset_right = 0.0499878
+theme_override_styles/focus = SubResource("StyleBoxEmpty_adl7q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_62i3k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yqdkl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4swcc")
+text = "
+"
+
+[node name="BtnRemove" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.857
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0499878
+theme_override_styles/focus = SubResource("StyleBoxEmpty_72jma")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_luqxe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u1kqh")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_61j6o")
+text = "
+"

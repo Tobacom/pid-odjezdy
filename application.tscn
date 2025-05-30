@@ -1,0 +1,875 @@
+[gd_scene load_steps=27 format=3 uid="uid://dovblcvpvvec6"]
+
+[ext_resource type="Theme" uid="uid://qt1c8s17gs7l" path="res://Themes/theme_landing.tres" id="1_ipnkv"]
+[ext_resource type="FontFile" uid="uid://ddniggvlattol" path="res://Fonts/FiraSans-SemiBold.ttf" id="2_7frnp"]
+[ext_resource type="FontFile" uid="uid://n0t51f8w56d3" path="res://Fonts/FiraSans-MediumItalic.ttf" id="3_fdbf6"]
+[ext_resource type="Script" uid="uid://cbsq6jfoyw71o" path="res://Scripts/StopSearchInput.cs" id="5_mhfhc"]
+[ext_resource type="Script" uid="uid://bu0wk7827lx5" path="res://Scripts/SRStop.cs" id="6_8ded3"]
+[ext_resource type="Script" uid="uid://d1wanqpnkyqxr" path="res://Scripts/SearchBtn.cs" id="6_pvkdd"]
+[ext_resource type="Theme" uid="uid://bey3exa6qe2cw" path="res://Themes/theme_searches.tres" id="7_7frnp"]
+[ext_resource type="FontFile" uid="uid://dtq2d54gnr05j" path="res://Fonts/FiraSans-Medium.ttf" id="7_fdbf6"]
+[ext_resource type="Script" uid="uid://cr6na4w2ixfx7" path="res://Scripts/DetailsPage.cs" id="10_mhfhc"]
+[ext_resource type="Theme" uid="uid://ceoj7tajm4sap" path="res://Themes/theme_details.tres" id="11_ftjwj"]
+[ext_resource type="FontFile" uid="uid://cw42qauhovqoj" path="res://Fonts/FiraSans-Bold.ttf" id="12_yd2yr"]
+[ext_resource type="FontFile" uid="uid://t4wsrtnih1mm" path="res://Fonts/FiraSans-Regular.ttf" id="13_yd2yr"]
+[ext_resource type="FontFile" uid="uid://dqrr27o2kwu40" path="res://Fonts/FiraSans-Light.ttf" id="14_w11e6"]
+[ext_resource type="PackedScene" uid="uid://i8d7avk550ws" path="res://Prefabs/StopPrefab.tscn" id="15_hgkn3"]
+[ext_resource type="PackedScene" uid="uid://ewu4cq23e24e" path="res://Prefabs/FavouritePrefab.tscn" id="16_voyjw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ughwd"]
+bg_color = Color(0.933333, 0.933333, 0.933333, 1)
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbjvd"]
+bg_color = Color(0.933333, 0.933333, 0.933333, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rbjvd"]
+color = Color(0.118581, 0.118581, 0.118581, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wbq3"]
+bg_color = Color(0.811765, 0.180392, 0.180392, 1)
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgkn3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_voyjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cqtq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5845"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ftjwj"]
+color = Color(0.118581, 0.118581, 0.118581, 1)
+thickness = 3
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgkn3"]
+bg_color = Color(0, 0, 0, 0.0980392)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hgkn3"]
+thickness = 2
+
+[node name="App" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Landing" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BGs" type="Control" parent="Landing"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="Landing/BGs"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.811765, 0.180392, 0.180392, 1)
+
+[node name="PanelT" type="Panel" parent="Landing/BGs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.114
+offset_bottom = 0.199997
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ughwd")
+
+[node name="PanelB" type="Panel" parent="Landing/BGs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rbjvd")
+
+[node name="Title" type="Label" parent="Landing"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.036
+anchor_right = 1.0
+anchor_bottom = 0.106
+offset_top = -5.2
+offset_bottom = -5.2
+grow_horizontal = 2
+theme = ExtResource("1_ipnkv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7frnp")
+theme_override_font_sizes/font_size = 40
+text = "Fake pid Aplikace :3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Landing"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058
+anchor_top = 0.133
+anchor_right = 0.938
+anchor_bottom = 0.139
+offset_left = 0.0319996
+offset_top = 0.0339966
+offset_right = 0.0320129
+offset_bottom = -0.166016
+grow_horizontal = 2
+theme = ExtResource("1_ipnkv")
+
+[node name="Subtitle" type="Label" parent="Landing"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.158
+anchor_right = 0.84
+anchor_bottom = 0.206
+offset_top = -0.100014
+offset_bottom = 0.300003
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ipnkv")
+theme_override_fonts/font = ExtResource("3_fdbf6")
+theme_override_font_sizes/font_size = 27
+text = "Za jak dlouho to jede?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FavouritesParent" type="Control" parent="Landing"]
+layout_mode = 1
+anchor_top = 0.613
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.100037
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FavTtitle" type="Label" parent="Landing/FavouritesParent"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 10.0
+offset_right = 76.5
+offset_bottom = 41.0
+grow_horizontal = 2
+theme = ExtResource("1_ipnkv")
+theme_override_colors/font_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_fonts/font = ExtResource("2_7frnp")
+theme_override_font_sizes/font_size = 25
+text = "Uložené trasy"
+
+[node name="HSeparator" type="HSeparator" parent="Landing/FavouritesParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.166
+anchor_right = 0.9
+anchor_bottom = 0.181
+offset_top = 0.0139961
+offset_bottom = -0.0510025
+grow_horizontal = 2
+theme = ExtResource("1_ipnkv")
+theme_override_styles/separator = SubResource("StyleBoxLine_rbjvd")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Landing/FavouritesParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.218
+anchor_right = 1.0
+anchor_bottom = 0.959
+offset_left = 12.5
+offset_top = -0.0780029
+offset_right = -12.5
+offset_bottom = 0.110992
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Landing/FavouritesParent/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SearchParent" type="Control" parent="Landing"]
+layout_mode = 1
+anchor_top = 0.22
+anchor_right = 1.0
+anchor_bottom = 0.613
+offset_bottom = -0.100037
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelFrom" type="Label" parent="Landing/SearchParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.109
+anchor_right = 0.875
+anchor_bottom = 0.222
+offset_top = 0.0250053
+offset_right = -0.125061
+offset_bottom = -0.0499954
+grow_horizontal = 2
+theme = ExtResource("1_ipnkv")
+theme_override_font_sizes/font_size = 25
+text = "Ze zastávky"
+vertical_alignment = 1
+
+[node name="InputFrom" type="LineEdit" parent="Landing/SearchParent" node_paths=PackedStringArray("resultList")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.127
+anchor_top = 0.255
+anchor_right = 0.873
+anchor_bottom = 0.4
+offset_left = -0.125
+offset_top = -0.124992
+offset_right = 0.125
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ipnkv")
+theme_override_font_sizes/font_size = 22
+placeholder_text = "Např. Hlavní Nádraží"
+script = ExtResource("5_mhfhc")
+resultList = NodePath("../SRFrom")
+
+[node name="LabelTime" type="Label" parent="Landing/SearchParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.149
+anchor_top = 0.473
+anchor_right = 0.467
+anchor_bottom = 0.618
+offset_left = 0.125
+offset_top = -0.0749817
+offset_right = -0.125
+offset_bottom = 0.0500336
+grow_horizontal = 2
+theme = ExtResource("1_ipnkv")
+theme_override_font_sizes/font_size = 20
+text = "Čas odjezdu"
+vertical_alignment = 1
+
+[node name="InputTime" type="LineEdit" parent="Landing/SearchParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.467
+anchor_top = 0.473
+anchor_right = 0.867
+anchor_bottom = 0.618
+offset_left = -0.125
+offset_top = -0.0749817
+offset_right = -0.125031
+offset_bottom = 0.0500336
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ipnkv")
+theme_override_font_sizes/font_size = 22
+placeholder_text = "Např.: 8:00"
+
+[node name="SearchBtn" type="Button" parent="Landing/SearchParent" node_paths=PackedStringArray("FavouritesBox", "AddToFavouritesLabel", "AddToFavouritesBtn", "ExportBtn", "RefreshBtn", "ExportLocationDialog", "LandingPage", "SearchesPage", "fromStop", "timeInput", "SearchesBackBtn", "SearchingTxt", "SearchResultsBox")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.727
+anchor_right = 0.856
+anchor_bottom = 0.898
+offset_top = 0.0750275
+offset_right = -6.10352e-05
+offset_bottom = 0.0500336
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ipnkv")
+text = "Hledat odjezdy"
+script = ExtResource("6_pvkdd")
+FavouritePrefab = ExtResource("16_voyjw")
+FavouritesBox = NodePath("../../FavouritesParent/ScrollContainer/VBoxContainer")
+AddToFavouritesLabel = NodePath("../../../Searches/TopPanel/AddToFavouritesBtn/Star")
+AddToFavouritesBtn = NodePath("../../../Searches/TopPanel/AddToFavouritesBtn")
+ExportBtn = NodePath("../../../Searches/TopPanel/ExportBtn")
+RefreshBtn = NodePath("../../../Searches/TopPanel/RefreshBtn")
+ExportLocationDialog = NodePath("../../../Searches/ExportDialog")
+LandingPage = NodePath("../..")
+SearchesPage = NodePath("../../../Searches")
+fromStop = NodePath("../InputFrom")
+timeInput = NodePath("../InputTime")
+SearchesBackBtn = NodePath("../../../Searches/TopPanel/ReturnBtn")
+SearchingTxt = NodePath("../../../Searches/SearchText")
+SearchResultsBox = NodePath("../../../Searches/Container/SearchResults")
+
+[node name="SRFrom" type="ItemList" parent="Landing/SearchParent" node_paths=PackedStringArray("targetLE")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.4
+anchor_right = 0.875
+anchor_bottom = 0.945
+offset_top = 2.28882e-05
+offset_right = -0.125061
+offset_bottom = 0.125
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ipnkv")
+script = ExtResource("6_8ded3")
+targetLE = NodePath("../InputFrom")
+
+[node name="Searches" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="Searches"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.933333, 0.933333, 0.933333, 1)
+
+[node name="TopPanel" type="Panel" parent="Searches"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.087
+offset_bottom = 0.0999947
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3wbq3")
+
+[node name="ReturnBtn" type="Button" parent="Searches/TopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.115
+anchor_right = 0.269
+anchor_bottom = 0.885
+offset_left = -0.125
+offset_top = -0.0149994
+offset_right = 0.124992
+offset_bottom = 0.0150032
+grow_vertical = 2
+theme = ExtResource("7_7frnp")
+text = "Zpět"
+
+[node name="ExportBtn" type="Button" parent="Searches/TopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.293
+anchor_top = 0.115
+anchor_right = 0.549
+anchor_bottom = 0.721
+offset_left = 0.124992
+offset_top = -0.0149994
+offset_right = 0.124985
+offset_bottom = 0.0190048
+theme = ExtResource("7_7frnp")
+text = "Export"
+
+[node name="RefreshBtn" type="Button" parent="Searches/TopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.563
+anchor_top = 0.115
+anchor_right = 0.819
+anchor_bottom = 0.721
+offset_left = -0.125015
+offset_top = -0.0149994
+offset_right = -0.125031
+offset_bottom = 0.0190048
+theme = ExtResource("7_7frnp")
+text = "Obnovit"
+
+[node name="AddToFavouritesBtn" type="Button" parent="Searches/TopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.857
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0499878
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hgkn3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_voyjw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4cqtq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b5845")
+text = "
+"
+
+[node name="Star" type="Label" parent="Searches/TopPanel/AddToFavouritesBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.783523, 0.783523, 0.783523, 1)
+theme_override_font_sizes/font_size = 42
+text = "★"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SearchText" type="Label" parent="Searches"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.051
+anchor_top = 0.476
+anchor_right = 0.949
+anchor_bottom = 0.524
+offset_left = -0.125002
+offset_top = -0.200012
+offset_right = 0.124969
+offset_bottom = 0.199951
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_fonts/font = ExtResource("7_fdbf6")
+theme_override_font_sizes/font_size = 27
+text = "Vyhledávám nejlepší trasy..."
+
+[node name="Container" type="ScrollContainer" parent="Searches"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.106
+anchor_right = 0.96
+anchor_bottom = 0.98
+offset_top = -0.200005
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SearchResults" type="VBoxContainer" parent="Searches/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ExportDialog" type="FileDialog" parent="Searches"]
+mode = 3
+title = "Exportovat data do souboru"
+initial_position = 1
+size = Vector2i(375, 180)
+dialog_hide_on_ok = true
+dialog_autowrap = true
+cancel_button_text = "Zrušit"
+mode_overrides_title = false
+access = 2
+filters = PackedStringArray("*.json", "*.csv")
+use_native_dialog = true
+
+[node name="Details" type="Control" parent="." node_paths=PackedStringArray("backBtn", "refreshBtn", "stopsContainer", "searchText")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_mhfhc")
+backBtn = NodePath("TopPanel/ReturnBtn")
+refreshBtn = NodePath("RefreshBtn")
+stopsContainer = NodePath("Stops/ScrollContainer/VBoxContainer")
+searchText = NodePath("SearchText")
+StopPrefab = ExtResource("15_hgkn3")
+
+[node name="BG" type="ColorRect" parent="Details"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.933333, 0.933333, 0.933333, 1)
+
+[node name="TopPanel" type="Panel" parent="Details"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.087
+offset_bottom = 0.0999947
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3wbq3")
+
+[node name="ReturnBtn" type="Button" parent="Details/TopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.115
+anchor_right = 0.269
+anchor_bottom = 0.885
+offset_left = -0.125
+offset_top = -0.0149994
+offset_right = 0.124992
+offset_bottom = 0.0150032
+grow_vertical = 2
+theme = ExtResource("7_7frnp")
+text = "Zpět"
+
+[node name="RefreshBtn" type="Button" parent="Details"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.765
+anchor_top = 0.006
+anchor_right = 0.989
+anchor_bottom = 0.061
+offset_left = 0.124969
+offset_top = -0.2
+offset_right = 0.125
+offset_bottom = 0.299995
+theme = ExtResource("7_7frnp")
+text = "Obnovit"
+
+[node name="Title" type="Label" parent="Details"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.093
+anchor_right = 0.967
+anchor_bottom = 0.163
+offset_left = 0.125
+offset_top = -0.0999985
+offset_right = -0.125061
+offset_bottom = -0.0999908
+grow_horizontal = 2
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("12_yd2yr")
+theme_override_font_sizes/font_size = 40
+text = "Linka LINKA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Linka" type="Control" parent="Details"]
+layout_mode = 1
+anchor_top = 0.157
+anchor_right = 1.0
+anchor_bottom = 0.3
+offset_top = 0.0999985
+offset_bottom = -3.05176e-05
+
+[node name="VSeparator" type="VSeparator" parent="Details/Linka"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.1
+anchor_right = 0.051
+anchor_bottom = 0.9
+offset_right = -0.125002
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_ftjwj")
+
+[node name="Z" type="Label" parent="Details/Linka"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_right = 0.123
+anchor_bottom = 0.5
+offset_right = -0.125
+grow_horizontal = 2
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("12_yd2yr")
+theme_override_font_sizes/font_size = 30
+text = "Z"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FromStop" type="Label" parent="Details/Linka"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("13_yd2yr")
+theme_override_font_sizes/font_size = 30
+text = "ZASTÁVKA"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Do" type="Label" parent="Details/Linka"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.5
+anchor_right = 0.179
+anchor_bottom = 1.0
+offset_right = -0.125
+grow_horizontal = 2
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("12_yd2yr")
+theme_override_font_sizes/font_size = 30
+text = "Do"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToStop" type="Label" parent="Details/Linka"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("13_yd2yr")
+theme_override_font_sizes/font_size = 30
+text = "ZASTÁVKA"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Odjezd" type="Control" parent="Details"]
+layout_mode = 1
+anchor_left = 0.035
+anchor_top = 0.3
+anchor_right = 0.968
+anchor_bottom = 0.429
+offset_left = -0.125
+offset_top = -1.52588e-05
+offset_right = -3.05176e-05
+offset_bottom = -0.300018
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="Details/Odjezd"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgkn3")
+
+[node name="StopName" type="Label" parent="Details/Odjezd"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.167
+anchor_right = 1.0
+anchor_bottom = 0.511
+offset_left = 0.0499997
+offset_top = -0.0300007
+offset_bottom = 0.00999832
+grow_horizontal = 2
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("13_yd2yr")
+theme_override_font_sizes/font_size = 25
+text = "Odjezd z ZASTÁVKA "
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Time" type="Label" parent="Details/Odjezd"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.5
+anchor_right = 0.931
+anchor_bottom = 0.844
+offset_left = -0.0500002
+offset_right = 0.149994
+offset_bottom = 0.0399933
+grow_horizontal = 2
+theme = ExtResource("11_ftjwj")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_w11e6")
+theme_override_font_sizes/font_size = 20
+text = "Za ČAS"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="HSeparator3" type="HSeparator" parent="Details/Odjezd"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.811
+anchor_right = 0.754
+anchor_bottom = 0.856
+offset_top = 0.00999451
+offset_right = 0.100006
+offset_bottom = -0.0400085
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_hgkn3")
+
+[node name="Stops" type="Control" parent="Details"]
+layout_mode = 1
+anchor_top = 0.423
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.100006
+
+[node name="VSeparator" type="VSeparator" parent="Details/Stops"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.041
+anchor_right = 0.051
+anchor_bottom = 0.959
+offset_left = -5.0
+offset_top = 0.123999
+offset_right = -5.125
+offset_bottom = -0.124023
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_ftjwj")
+
+[node name="FirstStop" type="Control" parent="Details/Stops"]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 1
+anchor_left = 0.051
+anchor_top = 0.023
+anchor_right = 0.984
+anchor_bottom = 0.138
+offset_left = -0.125
+offset_top = -4.292
+offset_bottom = -0.751999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time" type="Label" parent="Details/Stops/FirstStop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.194
+anchor_bottom = 1.0
+offset_right = 0.0999985
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("14_w11e6")
+theme_override_font_sizes/font_size = 25
+text = "23:59"
+vertical_alignment = 1
+
+[node name="StopName" type="Label" parent="Details/Stops/FirstStop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.194
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0999985
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("2_7frnp")
+theme_override_font_sizes/font_size = 27
+text = "Zastávka"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Details/Stops"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.119
+anchor_right = 1.0
+anchor_bottom = 0.869
+offset_top = -0.0760002
+offset_bottom = -0.0760193
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Details/Stops/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LastStop" type="Control" parent="Details/Stops"]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 1
+anchor_left = 0.051
+anchor_top = 0.872
+anchor_right = 0.984
+anchor_bottom = 0.986
+offset_left = -0.125002
+offset_top = -4.28799
+offset_bottom = -0.343994
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time" type="Label" parent="Details/Stops/LastStop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.194
+anchor_bottom = 1.0
+offset_right = 0.0999985
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("14_w11e6")
+theme_override_font_sizes/font_size = 25
+text = "23:59"
+vertical_alignment = 1
+
+[node name="StopName" type="Label" parent="Details/Stops/LastStop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.194
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0999985
+theme = ExtResource("11_ftjwj")
+theme_override_fonts/font = ExtResource("2_7frnp")
+theme_override_font_sizes/font_size = 27
+text = "Zastávka"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="SearchText" type="Control" parent="Details"]
+visible = false
+layout_mode = 1
+anchor_top = 0.099
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.300003
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Details/SearchText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.933333, 0.933333, 0.933333, 1)
+
+[node name="Label" type="Label" parent="Details/SearchText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12
+anchor_top = 0.317
+anchor_right = 0.88
+anchor_bottom = 0.376
+offset_top = -0.0270081
+offset_right = -3.05176e-05
+offset_bottom = -0.256012
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_ftjwj")
+theme_override_font_sizes/font_size = 30
+text = "Získávání informací..."
+horizontal_alignment = 1
+vertical_alignment = 1

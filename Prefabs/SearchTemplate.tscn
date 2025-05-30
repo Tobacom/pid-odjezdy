@@ -1,0 +1,137 @@
+[gd_scene load_steps=11 format=3 uid="uid://cy2hcxvdjmexv"]
+
+[ext_resource type="FontFile" uid="uid://dqrr27o2kwu40" path="res://Fonts/FiraSans-Light.ttf" id="1_mmhk1"]
+[ext_resource type="FontFile" uid="uid://ddniggvlattol" path="res://Fonts/FiraSans-SemiBold.ttf" id="1_p07hi"]
+[ext_resource type="FontFile" uid="uid://t4wsrtnih1mm" path="res://Fonts/FiraSans-Regular.ttf" id="2_p07hi"]
+[ext_resource type="Script" uid="uid://bftciiu6sqfk" path="res://Scripts/SearchResult.cs" id="4_bdeif"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uell8"]
+bg_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.811765, 0.180392, 0.180392, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_it4uh"]
+color = Color(0.118581, 0.118581, 0.118581, 1)
+thickness = 2
+vertical = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mmhk1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p07hi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdeif"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2txc0"]
+
+[node name="SearchTemplate" type="Control"]
+layout_mode = 3
+anchor_right = 0.933
+anchor_bottom = 0.143
+offset_right = 0.125
+offset_bottom = 24.9
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uell8")
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.054
+anchor_top = 0.125
+anchor_right = 0.054
+anchor_bottom = 0.925
+offset_left = -3.9
+offset_right = 0.1
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_it4uh")
+
+[node name="RouteDisplayName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.089
+anchor_top = 0.1
+anchor_right = 0.817
+anchor_bottom = 0.35
+offset_left = -0.15
+offset_right = 0.0499573
+theme_override_colors/font_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_fonts/font = ExtResource("1_p07hi")
+theme_override_font_sizes/font_size = 20
+text = "OS22"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="TripTerminalStation" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.089
+anchor_top = 0.32
+anchor_right = 0.817
+anchor_bottom = 0.57
+offset_left = -0.15
+offset_right = 0.0499573
+theme_override_colors/font_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_fonts/font = ExtResource("2_p07hi")
+theme_override_font_sizes/font_size = 18
+text = "Směr KONEČNÁ"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="TripDetails" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.089
+anchor_top = 0.5
+anchor_right = 0.817
+anchor_bottom = 0.73
+offset_left = -0.15
+offset_top = -2.5
+offset_right = 0.0499573
+theme_override_colors/font_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_fonts/font = ExtResource("2_p07hi")
+theme_override_font_sizes/font_size = 15
+text = "Přes ZASTÁVKA - ZASTÁVKA - ZASTÁVKA"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="DepartureTime" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.089
+anchor_top = 0.68
+anchor_right = 0.817
+anchor_bottom = 0.93
+offset_left = -0.15
+offset_right = 0.0499573
+theme_override_colors/font_color = Color(0.118581, 0.118581, 0.118581, 1)
+theme_override_fonts/font = ExtResource("1_mmhk1")
+theme_override_font_sizes/font_size = 17
+text = "23:59 - odjezd za 10 minut"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mmhk1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p07hi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bdeif")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2txc0")
+script = ExtResource("4_bdeif")
